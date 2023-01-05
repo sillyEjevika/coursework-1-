@@ -58,4 +58,9 @@ public class Coursework {
             System.out.println(employee.getFullName());
         }
     }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
 }
