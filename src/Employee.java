@@ -1,18 +1,18 @@
 public class Employee {
-    private final Integer id;
+    private final int id;
     private String fullName;
-    private Integer departamentId;
-    private Integer salary;
-    private static Integer idCounter = 1;
+    private int departamentId;
+    private int salary;
+    private static int idCounter = 1;
 
-    public Employee(String fullName, Integer departamentId, Integer salary) {
+    public Employee(String fullName, int departamentId, int salary) {
         this.id = idCounter++;
         this.fullName = fullName;
         this.departamentId = departamentId;
         this.salary = salary;
     }
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
@@ -20,11 +20,11 @@ public class Employee {
         return fullName;
     }
 
-    public Integer getDepartamentId() {
+    public int getDepartamentId() {
         return departamentId;
     }
 
-    public Integer getSalary() {
+    public int getSalary() {
         return salary;
     }
 

@@ -1,5 +1,5 @@
 public class Coursework {
-    public static final Employee[] emploees = new Employee[]{
+    public static final Employee[] EMPLOYEES = {
             new Employee("Наумов Гавриил Евсеевич", 1, 1500),
             new Employee("Голубев Ким Романович", 3, 2200),
             new Employee("Соболев Прохор Леонидович", 5, 3000),
@@ -13,22 +13,23 @@ public class Coursework {
     };
 
     public static void printEmployees() {
-        for (Employee employee : emploees) {
+        for (Employee employee : EMPLOYEES) {
+            System.out.println(employee);
         }
     }
 
     public static int calculateFinalSalary() {
         int sum = 0;
-        for (Employee employee : emploees) {
+        for (Employee employee : EMPLOYEES) {
             sum += employee.getSalary();
         }
         return sum;
     }
 
     public static Employee findEmployeeWithMinSalary() {
-        Employee result = emploees[0];
-        int minSalary = emploees[0].getSalary();
-        for (Employee employee : emploees) {
+        Employee result = EMPLOYEES[0];
+        int minSalary = Integer.MIN_VALUE;
+        for (Employee employee : EMPLOYEES) {
             if (employee.getSalary() < minSalary) {
                 minSalary = employee.getSalary();
                 result = employee;
@@ -38,9 +39,9 @@ public class Coursework {
     }
 
     public static Employee findEmployeeWithMaxSalary() {
-        Employee result = emploees[0];
-        int maxSalary = emploees[0].getSalary();
-        for (Employee employee : emploees) {
+        Employee result = EMPLOYEES[0];
+        int maxSalary = Integer.MAX_VALUE;
+        for (Employee employee : EMPLOYEES) {
             if (employee.getSalary() > maxSalary) {
                 maxSalary = employee.getSalary();
                 result = employee;
@@ -50,17 +51,13 @@ public class Coursework {
     }
 
     public static float calculateAverageSalary() {
-        return calculateFinalSalary() / (float) 10;
+        return calculateFinalSalary() / (float) EMPLOYEES.length;
     }
 
     public static void printFullName() {
-        for (Employee employee : emploees) {
+        for (Employee employee : EMPLOYEES) {
             System.out.println(employee.getFullName());
         }
     }
-
-    @Override
-    public String toString() {
-        return super.toString();
-    }
 }
+
